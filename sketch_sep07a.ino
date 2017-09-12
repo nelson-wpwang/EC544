@@ -27,7 +27,7 @@ void loop() {
   // read the state of the pushbutton value:
   buttonState1 = digitalRead(buttonPin1);
   buttonState2 = digitalRead(buttonPin2);
-  if (buttonState2 != LOW) {
+  if (buttonState2 == HIGH) {
     if (sum == 0) {
       sum = 1;
       func2();
@@ -85,7 +85,8 @@ void func2() {
   digitalWrite(ledPin3, LOW);
   lastButtonState = LOW;
   delay(300);
-  for (i=0;i<12; i++) {
+  buttonState2 = digitalRead(buttonPin2);
+  while (buttonState2 == LOW) {
     buttonState2 = digitalRead(buttonPin2);
     if (buttonState2 != lastButtonState)
   {
