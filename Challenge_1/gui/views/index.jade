@@ -1,0 +1,19 @@
+extends layout
+
+block scripts
+  include socketio_scripts.jade
+
+block content
+  h1 EC544 Group 5: Temperature Station
+  h3 Current Temperature:
+  h3(id='#temperature') System not operational
+  <br/>
+  h3 # of sensors operational:
+  h3(id='#sensors') System not operational
+
+  <br/>
+  <br/>
+  h3 Active sensors:
+  div(id='#sensors_detailed')
+
+  script(src='/javascripts/client_socket.js')
